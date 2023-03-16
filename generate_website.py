@@ -33,7 +33,7 @@ ProletRevDicta</a></span>
 <span></span>
 <span class="Label Label--secondary v-align-middle mr-1">Public</span>
 <span></span>
-%s<a href='Fast Pure Raw Links.htm'>Fast Pure Raw Links.htm</a>
+%s<a href='<!--FPRL.HTM-->'>Fast Pure Raw Links.htm</a>
 <!--LOAD PATH-->
 <hr>
 <!--LOAD LIST-->
@@ -54,6 +54,7 @@ for a in l.keys():
         ht2=ht.replace('<!--LOAD LIST-->',li)
         ht2=ht2.replace('\n<!--LOAD PATH-->','')
         ht2=ht2.replace('<!--INDEX.HTM-->','index.htm')
+        ht2=ht2.replace('<!--FPRL.HTM-->','Fast Pure Raw Links.htm')
         f=open('index.htm','w+');f.write(ht2);f.close()
     else:
         la=l[a]
@@ -68,6 +69,7 @@ for a in l.keys():
         ht2=ht.replace('<!--LOAD LIST-->',li)
         pr='/'.join(['..'for b in range(len(a[lp+1:].split('/')))])
         ht2=ht2.replace('<!--INDEX.HTM-->','%s/index.htm'%pr)
+        ht2=ht2.replace('<!--FPRL.HTM-->','%s/Fast Pure Raw Links.htm'%pr)
         pas=a[lp+1:].split('/')
         lpas=len(pas)
         t=['<span class="js-repo-root text-bold"><span class="js-path-segment d-inline-block wb-break-all"><a data-turbo-frame="repo-content-turbo-frame" href="%s/index.htm"><span>Prolet</span></a></span></span>'%'/'.join(['..'for b in range(lpas)])]
